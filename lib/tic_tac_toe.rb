@@ -54,11 +54,11 @@ def current_player(board)
 end
 
 def won?(board)
-  WIN_COMBINATIONS.find do |position|
-    board[position[0]] == board[position[1]] && 
-    board[position[1]] == board[position[2]] &&
-    position_taken?(board, position[0])
-  end  
+  WIN_COMBINATIONS.detect do |combo|
+    board[combo[0]] == board[combo[1]] &&
+      board[combo[1]] == board[combo[2]] &&
+      position_taken?(board, combo[0])
+  end
 end
 
 def full?(board)
