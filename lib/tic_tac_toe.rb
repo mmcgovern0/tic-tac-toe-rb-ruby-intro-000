@@ -46,11 +46,7 @@ def turn(board)
 end
 
 def turn_count(board)
-  turn = 0 
-  until turn == 9 
-  turn(board)
-  turn +=1
-end
+  board.count { |token| token == 'X' || token == 'O' }
 end
 
 def current_player(board)
